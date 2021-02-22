@@ -1,17 +1,9 @@
-import React, { Component } from 'react'
-import ReactMarkdown from "react-markdown";
+import React from 'react'
 
-const placeholder =
-  `
-  # Simple React Markdown Previewer
-  ## You can use GitHub flavored markdown into the editor and see the preview beside as you type
-  `;
-class ReactTest extends Component{
-  render () {
-    return (
-      <ReactMarkdown source='{placeholder}'/>
-    )
-  }
+const Content = ()=>{
+  return (
+    <h1>Home</h1>
+  )
 }
+export default Content
 
-export default ReactTest

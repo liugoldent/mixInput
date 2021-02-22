@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Topic from '../Components/Topic'
 const Menu = ()=>{
   return (
-    <h1>Menu</h1>
+    <div>
+      <Topic />
+    </div>
   )
 }
 

@@ -5,7 +5,10 @@ const Navbar = ({toggle})=>{
     <nav className='
     flex justify-between items-center h-16 bg-white text-black
     relative shadow-sm font-mono' role='navigation'>
-      <Link to="/" className="pl-8">Egg</Link>
+      <Link to="/" className="pl-8
+      text-blue-700
+      text-opacity-90
+      animate-pulse">mixInput</Link>
       <div className="px-4 cursor-pointer md:hidden"
         onClick={toggle}>
         <svg
