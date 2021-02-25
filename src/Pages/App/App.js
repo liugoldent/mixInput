@@ -5,7 +5,8 @@ import Dropdown from "../../Components/Dropdown";
 import Footer from "../../Components/Footer";
 import Home from "../Home";
 import About from "../About";
-import Menu from "../Menu";
+import LeetCode from "../LeetCode/LeetCode";
+import Content from "../Content";
 function App() {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -32,7 +33,8 @@ function App() {
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/about' exact component={About}/>
-        <Route path='/menu' exact component={Menu}/>
+        <Route path='/leetcode' exact component={LeetCode}/>
+        <Route path='/content' exact component={Content}/>
       </Switch>
 
       <Footer />

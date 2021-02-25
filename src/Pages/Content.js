@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Post from '../Components/Posts'
 const Content = ()=>{
   return (
-    <h1>Home</h1>
+    <div>
+    <Post />
+    </div>
   )
 }
 export default Content
