@@ -1,15 +1,20 @@
 import React from 'react'
 import { randomColor } from '../Components/common'
 /**
- * @description 每個題目的組件
+ * @description 渲染每個題目的組件
  * @param propsData - type: Array [題目, 題號名稱, 哪種形態的題目(tag)]
  * @param index - type: number
+ * @param propsFunc - type: function (要傳出去的資料)
  */
-const Topic = ({propsData, index})=>{
+const Topic = ({propsData, index, propsFunc})=>{
+  const emitFunc = function(){
+    propsFunc(propsData)
+  }
   return (
     <div className="font-mono flex justify-center items-center flex-col mt-2 mb-2">
-      <div className="relative inline-block">
-        <img className="rounded-lg" src={`https://picsum.photos/300/300?random=${index}`} />
+      <div className="relative inline-block cursor-pointer" onClick={emitFunc}>
+        <img className="rounded-lg" src={`https://picsum.photos/300/300?random=${index}`}
+        />
         <h1 className="
         absolute
         -inset-0
