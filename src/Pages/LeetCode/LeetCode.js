@@ -1,14 +1,34 @@
 import React from 'react'
+import axios from 'axios'
 import Topic from '../../Components/Topic'
 import Ans from '../../Components/Ans'
 import { TopicList } from './TopicAns/TopicList'
 const LeetCode = ()=>{
-  const showModal = true
-  // const [showModal, setShowModal] = React.useState(false)
-  const getClickInfo = function(info){
-    // setShowModal(!showModal)
-    console.log(showModal)
+  const [showModal, setShowModal] = React.useState(false)
+  /**
+   * @description 得到點到的題目資訊
+   * @param info {Array}
+   */
+  const getClickInfo = async function(info){
+    await getAns()
     console.log(info)
+    toggleModal(true)
+  }
+  const cors = 'https://cors-anywhere.herokuapp.com/';
+  const getAns = async function(){
+    await axios
+      .get(`https://mixinput-nodeapi.herokuapp.com/leetcode`)
+      .then(res =>{
+        console.log(res)
+      })
+
+  }
+  /**
+   * @description 切換開關窗
+   * @param status {Boolean}
+   */
+  const toggleModal = function(status){
+    setShowModal(status)
   }
   return (
     <div className="flex flex-col lg:flex-row justify-center items-center">
@@ -24,7 +44,7 @@ const LeetCode = ()=>{
       {
         showModal ?
           <>
-            <Ans />
+            <Ans controlModalFunc={toggleModal} />
             <div className="opacity-25 bg-black fixed inset-0 z-40"></div>
           </>
           : null
@@ -34,3 +54,5 @@ const LeetCode = ()=>{
 }
 
 export default LeetCode
+
+// ref: https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/modals/regular
