@@ -2,7 +2,9 @@ import React from 'react'
 import axios from 'axios'
 import Topic from '../../Components/Topic'
 import Ans from '../../Components/Ans'
-import { TopicList } from './TopicAns/TopicList'
+import { TopicList } from './TopicList'
+import { useSelector} from "react-redux";
+
 const LeetCode = ()=>{
   const [showModal, setShowModal] = React.useState(false)
   /**
@@ -14,7 +16,10 @@ const LeetCode = ()=>{
     console.log(info)
     toggleModal(true)
   }
-  const cors = 'https://cors-anywhere.herokuapp.com/';
+  /**
+   * @description 取得leetcode解答
+   * @returns {Promise<void>}
+   */
   const getAns = async function(){
     await axios
       .get(`https://mixinput-nodeapi.herokuapp.com/leetcode`)
@@ -30,6 +35,9 @@ const LeetCode = ()=>{
   const toggleModal = function(status){
     setShowModal(status)
   }
+
+  const a = useSelector(state => state.todoList)
+  console.log(a)
   return (
     <div className="flex flex-col lg:flex-row justify-center items-center">
       {

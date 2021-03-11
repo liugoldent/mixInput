@@ -5,7 +5,7 @@ import Dropdown from "../../Components/Dropdown";
 import Footer from "../../Components/Footer";
 import Home from "../Home";
 import About from "../About";
-import LeetCode from "../LeetCode/LeetCode";
+import LeetCode from "../LeetCode/LeetCodeMainPage";
 import Content from "../Content";
 function App() {
   const [isOpen, setIsOpen] = useState(false)
